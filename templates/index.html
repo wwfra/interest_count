@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>请输入数据生成图表</h1>
+    <form method="post">
+        <label>请输入数据（用逗号分隔）：</label><br>
+        <input type="text" id="base" name="base" placeholder="基本资金">
+        <input type="text" id="year_rate" name="year_rate" placeholder="年化利率">
+        <input type="text" id="month" name="month" placeholder="存款月份"><br><br>
+        <input type="submit" value="生成图表">
+    </form>
+
+    {% if chart %}
+        <h2>利息总览图</h2>
+        <div>{{ chart|safe }}</div>
+    {% endif %}
+</body>
+</html>
